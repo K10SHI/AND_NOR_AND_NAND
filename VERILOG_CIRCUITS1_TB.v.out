@@ -1,0 +1,71 @@
+#! /mingw64/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1148-gef01dd1e)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\msys64\mingw64\lib\ivl\system.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\msys64\mingw64\lib\ivl\va_math.vpi";
+S_00000136d89865a0 .scope module, "and_nor_nand_gates_tb" "and_nor_nand_gates_tb" 2 3;
+ .timescale 0 0;
+v00000136d893beb0_0 .var "a", 0 0;
+v00000136d89d2850_0 .var "b", 0 0;
+v00000136d89d28f0_0 .net "c", 0 0, L_00000136d8953260;  1 drivers
+v00000136d89d2990_0 .net "d", 0 0, L_00000136d89d2b70;  1 drivers
+v00000136d89d2a30_0 .net "e", 0 0, L_00000136d89d2be0;  1 drivers
+v00000136d89d2ad0_0 .net "g", 0 0, L_00000136d89d2d70;  1 drivers
+S_00000136d8986730 .scope module, "Instance0" "and_nor_nand_gates" 2 6, 3 1 0, S_00000136d89865a0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "c";
+    .port_info 1 /OUTPUT 1 "d";
+    .port_info 2 /OUTPUT 1 "e";
+    .port_info 3 /OUTPUT 1 "g";
+    .port_info 4 /INPUT 1 "a";
+    .port_info 5 /INPUT 1 "b";
+L_00000136d8953260 .functor AND 1, v00000136d893beb0_0, v00000136d89d2850_0, C4<1>, C4<1>;
+L_00000136d89d2b70 .functor NOR 1, v00000136d893beb0_0, v00000136d89d2850_0, C4<0>, C4<0>;
+L_00000136d89d2be0 .functor AND 1, v00000136d893beb0_0, v00000136d89d2850_0, C4<1>, C4<1>;
+L_00000136d89d2d70 .functor NAND 1, v00000136d893beb0_0, v00000136d89d2850_0, C4<1>, C4<1>;
+v00000136d8952e20_0 .net "a", 0 0, v00000136d893beb0_0;  1 drivers
+v00000136d8952b60_0 .net "b", 0 0, v00000136d89d2850_0;  1 drivers
+v00000136d89868c0_0 .net "c", 0 0, L_00000136d8953260;  alias, 1 drivers
+v00000136d8986960_0 .net "d", 0 0, L_00000136d89d2b70;  alias, 1 drivers
+v00000136d893bd70_0 .net "e", 0 0, L_00000136d89d2be0;  alias, 1 drivers
+v00000136d893be10_0 .net "g", 0 0, L_00000136d89d2d70;  alias, 1 drivers
+    .scope S_00000136d89865a0;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000136d893beb0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000136d89d2850_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000136d893beb0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000136d89d2850_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000136d893beb0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000136d89d2850_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000136d893beb0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000136d89d2850_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_00000136d89865a0;
+T_1 ;
+    %vpi_call 2 14 "$monitor", "T=%t |a=%b |b=%b |c(and)=%b |d(nor)=%b |e(and)=%b |g(nand)=%b", $time, v00000136d893beb0_0, v00000136d89d2850_0, v00000136d89d28f0_0, v00000136d89d2990_0, v00000136d89d2a30_0, v00000136d89d2ad0_0 {0 0 0};
+    %vpi_call 2 15 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call 2 16 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "VERILOG_CIRCUITS1_TB.v";
+    "./VERILOG_CIRCUITS1.v";
